@@ -1,5 +1,8 @@
+from flask import Flask
 import pickle
 import pandas as pd
+
+app = Flask()
 
 
 df = pd.DataFrame(
@@ -15,7 +18,9 @@ df = pd.DataFrame(
     ]
 )
 
-with open(r"C:\Users\mhema\OneDrive\Desktop\DataScience\MachineLearning\regression.pkl", "rb") as f:
-    pipeline = pickle.load(f)
+# print(df)
 
-print(pipeline.predict(df))
+with open(r"C:\Users\mhema\OneDrive\Desktop\DataScience\MachineLearning\regression.pkl", "rb") as file:
+    pipeline = pickle.load(file)
+
+print(pipeline.predict(df)[0])
