@@ -4,7 +4,6 @@ import pandas as pd
 
 app = Flask()
 
-
 df = pd.DataFrame(
     [['M', '51-55', 7, 'B', "3", 1, 1]],
     columns=[
@@ -17,8 +16,6 @@ df = pd.DataFrame(
         'Product_Category_1'
     ]
 )
-
-# print(df)
 
 with open(r"C:\Users\mhema\OneDrive\Desktop\DataScience\MachineLearning\regression.pkl", "rb") as file:
     pipeline = pickle.load(file)
